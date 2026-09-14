@@ -1,0 +1,13 @@
+stage,description,recommended_sla,exit_criteria
+New Lead,New incoming lead from any acquisition source,5 minutes,First contact attempt logged
+Contact Attempt 1,First call or WhatsApp attempt,15 minutes,Two-way contact or move to no response
+No Response 1,First unsuccessful contact attempt,24 hours,Second contact attempt completed
+Contact Attempt 2,Second call or WhatsApp attempt,24 hours,Two-way contact or move to no response
+No Response 2,Second unsuccessful contact attempt,48 hours,Third contact attempt completed
+Contacted,Two-way communication established,48 hours,Basic needs and intent captured
+Qualified,Lead matches target criteria,72 hours,Budget timing location and project fit confirmed
+Appointment,Meeting or presentation scheduled,-,Meeting completed or rescheduled
+Follow Up,Active opportunity requiring nurturing,7 days,Next action date set
+Negotiation,Commercial discussion in progress,3 days,Decision reached
+Won,Sale completed,-,Closed won
+Lost,Opportunity lost,-,Loss reason recorded

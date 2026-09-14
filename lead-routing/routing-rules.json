@@ -1,0 +1,42 @@
+{
+  "model": "Real Estate Lead Routing Example",
+  "version": "1.0",
+  "principles": [
+    "Route every valid lead to exactly one primary owner",
+    "Preserve source, campaign, language and geography metadata",
+    "Avoid reassigning active opportunities without a logged reason",
+    "Escalate untouched leads after the SLA expires"
+  ],
+  "rules": [
+    {
+      "priority": 1,
+      "when": {"duplicate": true},
+      "action": "merge_or_link_existing_contact"
+    },
+    {
+      "priority": 2,
+      "when": {"language": "tr"},
+      "action": "route_to_turkish_sales_pool"
+    },
+    {
+      "priority": 3,
+      "when": {"language": "en"},
+      "action": "route_to_english_sales_pool"
+    },
+    {
+      "priority": 4,
+      "when": {"country": "Germany"},
+      "action": "route_to_europe_sales_pool"
+    },
+    {
+      "priority": 5,
+      "when": {"source": "Meta Ads"},
+      "action": "round_robin_among_available_agents"
+    }
+  ],
+  "sla": {
+    "first_response_minutes": 5,
+    "reassign_if_untouched_minutes": 15,
+    "manager_escalation_minutes": 30
+  }
+}

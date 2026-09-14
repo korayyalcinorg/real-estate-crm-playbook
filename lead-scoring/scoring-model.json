@@ -1,0 +1,23 @@
+{
+  "model": "Real Estate Lead Scoring Example",
+  "version": "1.0",
+  "notes": "Example framework. Adapt thresholds to your own market and sales data.",
+  "signals": [
+    {"signal": "requested_price_list", "score": 15},
+    {"signal": "requested_payment_plan", "score": 15},
+    {"signal": "booked_appointment", "score": 25},
+    {"signal": "replied_on_whatsapp", "score": 10},
+    {"signal": "answered_phone_call", "score": 10},
+    {"signal": "visited_project_page_multiple_times", "score": 10},
+    {"signal": "budget_confirmed", "score": 20},
+    {"signal": "purchase_timeline_under_90_days", "score": 20},
+    {"signal": "location_match", "score": 10},
+    {"signal": "no_response_after_three_attempts", "score": -20},
+    {"signal": "invalid_phone_or_duplicate", "score": -50}
+  ],
+  "segments": {
+    "hot": {"min_score": 60, "action": "Immediate sales follow-up and priority routing"},
+    "warm": {"min_score": 30, "max_score": 59, "action": "Active nurture and scheduled follow-up"},
+    "cold": {"max_score": 29, "action": "Long-term nurture or reactivation sequence"}
+  }
+}
